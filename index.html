@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      h1 {
+        text-align: center;
+        padding: 80px;
+      }
+      .card-header {
+        background-color: #616161;
+        padding: 16px;
+        color: black;
+        font-size: 24px;
+        font-weight: 400;
+      }
+      .card {
+        border-radius: 8px;
+        box-shadow: 1px 1px 1px 1px lightgray;
+      }
+      .card-title {
+        padding-top: 20px;
+        font-size: 3rem;
+      }
+      .card-body {
+        padding: 0px;
+      }
+      .card-text {
+        padding: 16px;
+      }
+      .btn {
+        margin: 16px;
+      }
+    </style>
+    <title>Stripe Payment Modal Plain HTML Example</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Stripe Payment Modal Plain HTML Example</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card text-center">
+            <div class="card-header">Amount Charge</div>
+            <div class="card-body">
+              <h5 class="card-title">$10</h5>
+              <p class="card-text">Amount set in Admin Panel</p>
+              <button type="button" class="btn btn-primary">
+                Amount Charge
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card text-center">
+            <div class="card-header">Stripe Price Charge</div>
+            <div class="card-body">
+              <h5 class="card-title">$39</h5>
+              <p class="card-text">Payment with Stripe Price Id</p>
+              <button type="button" class="btn btn-primary">
+                Stripe Price Charge
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card text-center">
+            <div class="card-header">Subscription</div>
+            <div class="card-body">
+              <h5 class="card-title">$49<small>/mo</small></h5>
+              <p class="card-text">Subscription Charge</p>
+              <button type="button" class="btn btn-primary">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
