@@ -54,7 +54,7 @@
             <div class="card-body">
               <h5 class="card-title">$10</h5>
               <p class="card-text">Amount set in Admin Panel</p>
-              <button type="button" class="btn btn-primary">
+              <button type="button" class="btn btn-primary" id="amount-payment">
                 Amount Charge
               </button>
             </div>
@@ -66,7 +66,7 @@
             <div class="card-body">
               <h5 class="card-title">$39</h5>
               <p class="card-text">Payment with Stripe Price Id</p>
-              <button type="button" class="btn btn-primary">
+              <button type="button" class="btn btn-primary stripePriceIdCharge">
                 Stripe Price Charge
               </button>
             </div>
@@ -78,11 +78,21 @@
             <div class="card-body">
               <h5 class="card-title">$49<small>/mo</small></h5>
               <p class="card-text">Subscription Charge</p>
-              <button type="button" class="btn btn-primary">Subscribe</button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-subscription-checkout="true"
+              >
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script
+      src="http://localhost:4242/api/stripe_modals/script.js?siteId=6f359dc2-4d0c-4a87-81d7-cffaacb320ce"
+      defer
+    ></script>
   </body>
 </html>
