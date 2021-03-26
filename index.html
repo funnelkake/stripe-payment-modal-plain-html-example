@@ -9,6 +9,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
       rel="stylesheet"
     />
@@ -54,7 +58,16 @@
             <div class="card-body">
               <h5 class="card-title">$10</h5>
               <p class="card-text">Amount set in Admin Panel</p>
-              <button type="button" class="btn btn-primary" id="amount-payment">
+              <div>
+                <select
+                  onchange="onQuantityChanged(event, '#pm-payment-amount')"
+                >
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-primary" id="pm-payment-amount">
                 Amount Charge
               </button>
             </div>
@@ -66,7 +79,16 @@
             <div class="card-body">
               <h5 class="card-title">$39</h5>
               <p class="card-text">Payment with Stripe Price Id</p>
-              <button type="button" class="btn btn-primary stripePriceIdCharge">
+              <div>
+                <select
+                  onchange="onQuantityChanged(event, '.pm-payment-stripeid')"
+                >
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-primary pm-payment-stripeid">
                 Stripe Price Charge
               </button>
             </div>
@@ -78,10 +100,19 @@
             <div class="card-body">
               <h5 class="card-title">$49<small>/mo</small></h5>
               <p class="card-text">Subscription Charge</p>
+              <div>
+                <select
+                        onchange="onQuantityChanged(event, '[data-subscription-checkout=true]')"
+                >
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
               <button
                 type="button"
                 class="btn btn-primary"
-                data-subscription-checkout="true"
+                data-subscription-checkout=true
               >
                 Subscribe
               </button>
@@ -91,8 +122,19 @@
       </div>
     </div>
     <script
-      src="http://localhost:4242/api/stripe_modals/script.js?siteId=6f359dc2-4d0c-4a87-81d7-cffaacb320ce"
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+    ></script>
+    <script
+      src="http://localhost:4242/api/stripe_modals/script.js?siteId=6799daff-ea3a-461c-a2ce-c322394121d3"
+      type="text/javascript"
       defer
     ></script>
+    <script type="application/javascript">
+      const onQuantityChanged = (event, openModalSelector) => {
+        const openModalElement = document.querySelector(`button${openModalSelector}`);
+        openModalElement.setAttribute("data-product-quantity", event.target.value);
+      }
+    </script>
   </body>
 </html>
