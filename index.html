@@ -19,12 +19,22 @@
     <style>
       h1 {
         text-align: center;
-        padding: 80px;
+        padding-top: 80px;
+      }
+      h2 {
+        text-align: center;
+        padding: 10px;
+      }
+      p {
+        text-align: center;
+      }
+      .subtitle{
+        padding: 10px;
       }
       .card-header {
         background-color: #616161;
         padding: 16px;
-        color: black;
+        color: white;
         font-size: 24px;
         font-weight: 400;
       }
@@ -50,7 +60,9 @@
   </head>
   <body>
     <div class="container">
-      <h1>Stripe Payment Modal Plain HTML Example</h1>
+      <h1>Stripe Payment Modal</h1>
+      <h2>Plain HTML Example</h2>
+      <p class="subtitle">View <a href="https://github.com/funnelkake/stripe-payment-modal-plain-html-example" target="_blank">GitHub repo</a> for full code.</p>
       <div class="row">
         <div class="col-sm-4">
           <div class="card text-center">
@@ -59,7 +71,7 @@
               <h5 class="card-title">$10</h5>
               <p class="card-text">Amount set in Admin Panel</p>
               <div>
-                <select
+                Quantity <select
                   onchange="onQuantityChanged(event, '#pm-payment-amount')"
                 >
                   <option value="1" selected>1</option>
@@ -80,7 +92,7 @@
               <h5 class="card-title">$39</h5>
               <p class="card-text">Payment with Stripe Price Id</p>
               <div>
-                <select
+                Quantity <select
                   onchange="onQuantityChanged(event, '.pm-payment-stripeid')"
                 >
                   <option value="1" selected>1</option>
@@ -101,7 +113,7 @@
               <h5 class="card-title">$49<small>/mo</small></h5>
               <p class="card-text">Subscription Charge</p>
               <div>
-                <select
+                Quantity <select
                         onchange="onQuantityChanged(event, '[data-subscription-checkout=true]')"
                 >
                   <option value="1" selected>1</option>
@@ -125,11 +137,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
     ></script>
-    <script
-      src="http://localhost:4242/api/stripe_modals/script.js?siteId=6799daff-ea3a-461c-a2ce-c322394121d3"
-      type="text/javascript"
-      defer
-    ></script>
+    <script src="https://api.paymentmodal.com/api/stripe_modals/script.js?siteId=a76e4255-058b-4843-a479-f9c9d507f838" defer></script>
     <script type="application/javascript">
       const onQuantityChanged = (event, openModalSelector) => {
         const openModalElement = document.querySelector(`button${openModalSelector}`);
